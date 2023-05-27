@@ -4,14 +4,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement related
-    public float moveSpeed = 5f;
+    public float moveSpeed = 8f;
     [Range(0, 1)] public float friction = 0.05f;
+    public float jumpForce = 4;
     private float _horizontalInput;
     private Rigidbody2D _rigidbody2D;
+    public bool onGround;
     
     // Animation related
     private Animator _animator;
-    private static readonly int HorizontalMovement = Animator.StringToHash("HorizontalMovement");
+    private static readonly int HorizontalSpeed = Animator.StringToHash("HorizontalSpeed");
+    private static readonly int VerticalSpeed = Animator.StringToHash("VerticalSpeed");
+    private static readonly int OnGround = Animator.StringToHash("OnGround");
 
     private void Start()
     {
@@ -36,7 +40,10 @@ public class Player : MonoBehaviour
         
         #region Setting animator parameters
 
-        _animator.SetFloat(HorizontalMovement,Mathf.Abs(velocity.x));
+        _animator.SetFloat(HorizontalSpeed,Mathf.Abs(velocity.x));
+        _animator.SetFloat(VerticalSpeed,_rigidbody2D.velocity.y);
+        _animator.SetBool(OnGround,onGround);
+
 
         #endregion
 
@@ -58,15 +65,27 @@ public class Player : MonoBehaviour
         }
 
         #endregion
+
+        #region Taking jump input and setting vertical velocity accordingly
+
+        if (Input.GetButtonDown("Jump") && onGround)
+        {
+            onGround = false;
+            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+        }
+
+        #endregion
     }
 
     private void FixedUpdate()
     {
-        #region Applying fake friction to player
+        #region Applying fake horizontal friction to player
 
         if (Mathf.Abs(_rigidbody2D.velocity.x) > 0.005f)
         {
-            _rigidbody2D.velocity *= Vector2.right * (1-friction); 
+            var velocity = _rigidbody2D.velocity;
+            velocity.x *= (1 - friction);
+            _rigidbody2D.velocity = velocity;
         }
 
         #endregion
