@@ -10,11 +10,17 @@
           <e p="player" t="Include" />
         </e>
         <e p="Physics Materials" t="Include" />
+        <e p="Prefabs" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
           <e p="GroundCheck.cs" t="Include" />
+          <e p="ManagersParent.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Singleton.cs" t="Include" />
+          </e>
         </e>
         <e p="Settings" t="Include">
           <e p="Scenes" t="Include" />
