@@ -1,9 +1,11 @@
 using System;
+using Managers;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     // Movement related
+    [Header("Movement Related")]
     public float moveSpeed = 8f;
     [Range(0, 1)] public float friction = 0.05f;
     public float jumpForce = 4;
@@ -16,6 +18,11 @@ public class Player : MonoBehaviour
     private static readonly int HorizontalSpeed = Animator.StringToHash("HorizontalSpeed");
     private static readonly int VerticalSpeed = Animator.StringToHash("VerticalSpeed");
     private static readonly int OnGround = Animator.StringToHash("OnGround");
+    
+    // Questions related
+    [Header("Questions Related")]
+    public bool isOnAnswerBlock;
+    public float currentAnswer;
 
     private void Start()
     {
@@ -72,6 +79,15 @@ public class Player : MonoBehaviour
         {
             onGround = false;
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+        }
+
+        #endregion
+
+        #region Taking interact input and calling related functions
+
+        if (Input.GetButtonDown("Interact") && isOnAnswerBlock)
+        {
+            GameManager.Instance.AttemptToAnswer(currentAnswer);
         }
 
         #endregion
