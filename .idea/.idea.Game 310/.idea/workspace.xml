@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613df1a2-150d-4822-bac2-7ec0c2e94004" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnswerBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnswerBlock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
@@ -84,6 +83,7 @@
       <workItem from="1685231346764" duration="3739000" />
       <workItem from="1685242965530" duration="475000" />
       <workItem from="1685303362155" duration="248000" />
+      <workItem from="1685306283833" duration="241000" />
     </task>
     <servers />
   </component>

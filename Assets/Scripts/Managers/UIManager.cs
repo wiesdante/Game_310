@@ -12,16 +12,38 @@ namespace Managers
         public TextMeshProUGUI promptText;
 
 
-        public void OpenPromptBox(string title, string text, float animationDelay)
+        public void OpenPromptBox(string title, string text, float animationDelay, bool instant)
         {
             promptTitle.text = title;
             promptText.text = text;
-            promptBoxPanel.transform.DOMoveY(65, animationDelay, true);
+
+            if (instant)
+            {
+                var position = promptBoxPanel.transform.position;
+                position = new Vector3(position.x, 65,
+                    position.z);
+                promptBoxPanel.transform.position = position;
+            }
+            else
+            {
+                promptBoxPanel.transform.DOMoveY(65, animationDelay, true);
+ 
+            }
         }
 
-        public void ClosePromptBox(float animationDelay)
+        public void ClosePromptBox(float animationDelay, bool instant)
         {
-            promptBoxPanel.transform.DOMoveY(-65, animationDelay, true);
+            if (instant)
+            {
+                var position = promptBoxPanel.transform.position;
+                position = new Vector3(position.x, -65,
+                    position.z);
+                promptBoxPanel.transform.position = position;
+            }
+            else
+            {
+                promptBoxPanel.transform.DOMoveY(-65, animationDelay, true);
+            }
         }
     }
 }
