@@ -21,12 +21,12 @@ namespace Managers
         {
             if (Math.Abs(answer - currentCorrectAnswer) < 0.01f)
             {
-                UIManager.Instance.ClosePromptBox();
+                UIManager.Instance.ClosePromptBox(0f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
             {
-                UIManager.Instance.ClosePromptBox();
+                UIManager.Instance.ClosePromptBox(0f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

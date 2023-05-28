@@ -20,7 +20,7 @@ public class QuestionBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UIManager.Instance.OpenPromptBox("Question",question);
+            UIManager.Instance.OpenPromptBox("Question",question,0.5f);
         }
     }
 
@@ -28,7 +28,7 @@ public class QuestionBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UIManager.Instance.ClosePromptBox();
+            UIManager.Instance.ClosePromptBox(0.5f);
         }
     }
 }

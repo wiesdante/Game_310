@@ -416,6 +416,8 @@ MonoBehaviour:
   friction: 0.1
   jumpForce: 3.7
   onGround: 0
+  isOnAnswerBlock: 0
+  currentAnswer: 0
 --- !u!1 &7549798353602892048
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +475,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.05}
+  m_Size: {x: 0.1, y: 0.050000012}
   m_EdgeRadius: 0
 --- !u!114 &7549798353602892054
 MonoBehaviour:
