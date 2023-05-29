@@ -8,10 +8,10 @@ public class QuestionBlock : MonoBehaviour
 
     private void Start()
     {
-        SetupQuestion();
+        SetupCurrentAnswer();
     }
 
-    private void SetupQuestion()
+    private void SetupCurrentAnswer()
     {
         GameManager.Instance.currentCorrectAnswer = correctAnswer;
     }
@@ -20,7 +20,7 @@ public class QuestionBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UIManager.Instance.OpenPromptBox("Question",question,0.5f,false);
+            UIManager.Instance.OpenPromptBox("Question",question,0.5f);
         }
     }
 
@@ -28,7 +28,7 @@ public class QuestionBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UIManager.Instance.ClosePromptBox(0.5f,false);
+            UIManager.Instance.ClosePromptBox(0.5f);
         }
     }
 }

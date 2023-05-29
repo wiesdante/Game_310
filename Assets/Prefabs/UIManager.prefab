@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38088eef93aff748afd853fad3f745a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptBoxPanel: {fileID: 6177458694560784694}
+  promptBoxPanel: {fileID: 6177458694560784693}
   promptTitle: {fileID: 6177458693393736134}
   promptText: {fileID: 6177458692800951961}
 --- !u!1 &6177458694560784694

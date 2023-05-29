@@ -12,7 +12,7 @@ public class AnswerBlock : MonoBehaviour
             player.currentAnswer = answer;
             player.isOnAnswerBlock = true;
             
-            UIManager.Instance.OpenPromptBox("Answer","If you think the correct answer is " + answer + ", press E.",0.5f,false);
+            UIManager.Instance.OpenPromptBox("Answer","If you think the correct answer is " + answer + ", press E.",0.5f);
         }
     }
 
@@ -23,7 +23,7 @@ public class AnswerBlock : MonoBehaviour
             var player = other.gameObject.GetComponent<Player>();
             player.isOnAnswerBlock = false;
             
-            UIManager.Instance.ClosePromptBox(0.5f,false);
+            UIManager.Instance.ClosePromptBox(0.5f);
         }
     }
 }

@@ -7,43 +7,21 @@ namespace Managers
     public class UIManager : Singleton<UIManager>
     {
         [Header("PromptBox Related")]
-        public GameObject promptBoxPanel;
+        public RectTransform promptBoxPanel;
         public TextMeshProUGUI promptTitle;
         public TextMeshProUGUI promptText;
 
 
-        public void OpenPromptBox(string title, string text, float animationDelay, bool instant)
+        public void OpenPromptBox(string title, string text, float animationDelay)
         {
             promptTitle.text = title;
             promptText.text = text;
-
-            if (instant)
-            {
-                var position = promptBoxPanel.transform.position;
-                position = new Vector3(position.x, 65,
-                    position.z);
-                promptBoxPanel.transform.position = position;
-            }
-            else
-            {
-                promptBoxPanel.transform.DOMoveY(65, animationDelay, true);
- 
-            }
+            promptBoxPanel.DOAnchorPosY(65,animationDelay,true);
         }
 
-        public void ClosePromptBox(float animationDelay, bool instant)
+        public void ClosePromptBox(float animationDelay)
         {
-            if (instant)
-            {
-                var position = promptBoxPanel.transform.position;
-                position = new Vector3(position.x, -65,
-                    position.z);
-                promptBoxPanel.transform.position = position;
-            }
-            else
-            {
-                promptBoxPanel.transform.DOMoveY(-65, animationDelay, true);
-            }
+            promptBoxPanel.DOAnchorPosY(-65,animationDelay,true);
         }
     }
 }

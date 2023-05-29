@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
     {
         #region Applying fake horizontal friction to player
 
-        if (Mathf.Abs(_rigidbody2D.velocity.x) > 0.005f)
+        if (Mathf.Abs(_rigidbody2D.velocity.x) > 0.0001f)
         {
             var velocity = _rigidbody2D.velocity;
             velocity.x *= (1 - friction);
