@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     [Header("Questions Related")]
     public bool isOnAnswerBlock;
     public float currentAnswer;
+    
+    // Sound effects related
+    private AudioSource _audioSource;
+    public AudioClip jumpSoundEffect;
 
     private void Start()
     {
@@ -30,6 +34,7 @@ public class Player : MonoBehaviour
 
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _animator = gameObject.GetComponent<Animator>();
+        _audioSource = gameObject.GetComponent<AudioSource>();
 
         #endregion
     }
@@ -78,6 +83,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && onGround)
         {
             onGround = false;
+            _audioSource.PlayOneShot(jumpSoundEffect);
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
         }
 
